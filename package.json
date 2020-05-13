@@ -1,0 +1,51 @@
+{
+  "name": "threads-api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/runtime": "^7.9.6",
+    "@hapi/joi": "^17.1.1",
+    "babel-eslint": "^10.1.0",
+    "bcrypt": "^4.0.1",
+    "body-parser": "^1.19.0",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "lodash": "^4.17.15",
+    "mysql2": "^2.1.0",
+    "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.21.8",
+    "sequelize-cli": "^5.5.1",
+    "superagent": "^5.2.2"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.9.6",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-runtime": "^7.9.6",
+    "@babel/preset-env": "^7.9.6",
+    "@babel/register": "^7.9.0",
+    "babel-plugin-module-resolver": "^4.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^7.0.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-import-resolver-babel-module": "^5.1.2",
+    "eslint-plugin-import": "^2.20.2",
+    "mocha": "^7.1.2",
+    "nodemon": "^2.0.3",
+    "supertest": "^4.0.2"
+  },
+  "scripts": {
+    "start": "nodemon --exec babel-node -r dotenv/config ./src/index.js ",
+    "test": "./node_modules/.bin/mocha --require @babel/register tests/*.js --exit",
+    "migrate": "sequelize db:migrate",
+    "reset": "sequelize db:migrate:undo:all",
+    "seed": "sequelize db:seed:all"
+  },
+  "author": "",
+  "license": "ISC"
+}
