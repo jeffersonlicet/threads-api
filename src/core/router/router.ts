@@ -1,5 +1,6 @@
 import { Service } from 'core/service';
 import express from 'express';
+import errorHandler from 'middlewares/errorHandler';
 
 export default class Router {
   service: Service;
@@ -10,15 +11,24 @@ export default class Router {
     this.handler = express.Router();
   }
 
-  get(path: string, handler: Function) {
-    this.handler.get(path, async (req: express.Request, res: express.Response) => {
-      res.send(await handler.call(this.service, req, res));
-    });
+  get(path: string, middlewares: Array<any>, handler: Function) {
+    this.handler.get(path,
+      ...middlewares,
+      errorHandler(
+        async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+          res.send(await handler.call(this.service, { req, res, next }));
+        }
+      )
+    );
   }
 
-  post(path: string, handler: Function) {
-    this.handler.post(path, async (req: express.Request, res: express.Response) => {
-      res.send(await handler.call(this.service, req, res));
-    });
+  post(path: string, middlewares: Array<any>, handler: Function) {
+    this.handler.post(path,
+      ...middlewares,
+      errorHandler(
+        async (req: express.Request, res: express.Response, next: express.NextFunction) => {
+          res.send(await handler.call(this.service, { req, res, next }));
+      })
+    );
   }
 }

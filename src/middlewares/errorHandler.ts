@@ -11,6 +11,7 @@ export default function errorHandler(fn: Function) {
     try {
       return await fn.call(this, req, res, next);
     } catch (err) {
+      console.log(err);
       next(err);
     }
   }

@@ -10,7 +10,8 @@
         "services": "./src/services",
         "core": "./src/core",
         "config": "./src/config",
-        "middlewares": "./src/middlewares"
+        "middlewares": "./src/middlewares",
+        "models": "./src/models"
       }
     }],
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
