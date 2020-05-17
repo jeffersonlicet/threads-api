@@ -1,0 +1,39 @@
+thread
+  title: string
+  cover: string
+  author: string
+  source: string
+  publisherId: FK user
+  createdAt: date
+  updatedAt: date
+  visits: number
+  likes: number
+  comments: number
+  size: number
+
+threadItem
+  likes: number
+  comments: number
+  title: string
+  threadId: number
+  body: markdown
+  position: number
+
+user
+  id: number
+  rank: string
+  username: string
+  avatar: string
+  email: string
+  password: string
+
+comment:
+  id: number
+  userId: number
+  content: markdown
+  createdAt: date
+  updatedAt: date
+  likes: number
+
+tops:
+  rank bases on time, likes, visits and comments logaritmic

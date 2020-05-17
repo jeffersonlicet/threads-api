@@ -1,21 +1,19 @@
 {
   "presets": [
-    [
-      "@babel/preset-env",
-      {
-        "targets": {
-          "node": "current"
-        }
-      }
-    ]
+    "@babel/preset-env",
+    "@babel/typescript"
   ],
   "plugins": [
     ["module-resolver", {
       "root": ["./src"],
       "alias": {
-        "services": "./src/services"
+        "services": "./src/services",
+        "core": "./src/core",
+        "config": "./src/config",
+        "middlewares": "./src/middlewares"
       }
     }],
-    "@babel/plugin-proposal-class-properties",
+    ["@babel/plugin-proposal-decorators", { "legacy": true }],
+    "@babel/plugin-proposal-class-properties"
   ]
 }

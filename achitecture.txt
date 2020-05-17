@@ -1,0 +1,21 @@
+services
+  dbService
+    uses models (registers all models)
+  notificationService
+  userService
+
+routes requires controllers
+controllers (requires services)
+  user
+    fetch
+  thread
+    fetchAll
+    fetch
+    edit
+    delete
+    create
+
+app (express)
+
+a request:
+router -> middleware -> bussines logic -> model -> db -> response

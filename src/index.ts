@@ -4,6 +4,4 @@ import config from 'config';
 /**
  * Boot all services
  */
-Container
-  .getInstance()
-  .boot(config.servicesPath);
+Container.boot(config.servicesPath);
