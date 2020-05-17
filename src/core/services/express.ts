@@ -1,5 +1,6 @@
 import scan from 'core/scan';
-import { Service, Container, Router } from 'core/service';
+import { Router } from 'core/router';
+import { Service, Container } from 'core/service';
 
 import config from 'config';
 
