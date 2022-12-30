@@ -40,7 +40,7 @@
     "eslint-config-airbnb-base": "^14.1.0",
     "eslint-import-resolver-babel-module": "^5.1.2",
     "eslint-plugin-import": "^2.20.2",
-    "mocha": "^7.1.2",
+    "mocha": "^10.2.0",
     "nodemon": "^2.0.3",
     "supertest": "^4.0.2"
   },
